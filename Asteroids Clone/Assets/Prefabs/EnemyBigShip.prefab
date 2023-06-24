@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 1409697262447552975}
   - component: {fileID: 300399880676284083}
   - component: {fileID: 236391752133577789}
-  - component: {fileID: 1177456454786598111}
+  - component: {fileID: 8579907106748010512}
   m_Layer: 8
   m_Name: EnemyBigShip
   m_TagString: BigEnemy
@@ -166,7 +166,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.91, y: 0.91}
   m_EdgeRadius: 0
---- !u!114 &1177456454786598111
+--- !u!114 &8579907106748010512
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7706875824817178458}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22d664e79845e654497c55dac242338e, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d8df0c80799ba343bbffd35fd883284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.5

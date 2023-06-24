@@ -6,11 +6,14 @@ public class Bullet : MonoBehaviour
 {
     private GameManager gameManager;
     private Enemy enemy;
+    private EnemyBigShip bigEnemy;
 
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
         enemy = FindObjectOfType<Enemy>();
+        bigEnemy = FindObjectOfType<EnemyBigShip>();
+
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -20,13 +23,5 @@ public class Bullet : MonoBehaviour
             gameObject.SetActive(false);
         }
 
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            Destroy(collision.gameObject);
-            gameManager.UpdateScore(enemy.scoreValue);
-            gameObject.SetActive(false);
-        }
-
     }
-
 }

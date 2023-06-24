@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     {
         startScreen.gameObject.SetActive(false);
         UIScreen.gameObject.SetActive(true);
+        UpdateScore(0);
         isGameActive = true;
     }
 

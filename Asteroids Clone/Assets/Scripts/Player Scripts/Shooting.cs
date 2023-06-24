@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
+    private GameManager gameManager;
     public Transform firePoint;
 
     public float bulletForce = 10f;
 
+    void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && gameManager.isGameActive)
         {
             Shoot();
         }
