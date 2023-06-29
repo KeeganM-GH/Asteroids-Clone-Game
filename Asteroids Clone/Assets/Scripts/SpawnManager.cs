@@ -20,7 +20,7 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        enemyCount = FindObjectsOfType<Enemy>().Length;
+        enemyCount = FindObjectsOfType<Enemy>().Length + FindObjectsOfType<EnemyBigShip>().Length;
 
         if (enemyCount == 0)
         {
@@ -56,13 +56,5 @@ public class SpawnManager : MonoBehaviour
         
     }
 
-    /*private Vector2 GenerateSpawnPosition()
-    {
-        float spawnPosX = Random.Range(-spawnRangeX, spawnRangeX);
-        float spawnPosY = Random.Range(-spawnRangeY, spawnRangeY);
 
-        Vector2 randomPos = new Vector2(spawnPosX, spawnPosY);
-
-        return randomPos;
-    }*/
 }
