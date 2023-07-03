@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     private int score;
     public bool gameOver;
     public bool isGameActive;
+    public bool playerDead;
 
     public void StartGame()
     {
@@ -45,22 +46,25 @@ public class GameManager : MonoBehaviour
     public void PlayerDied()
     {
         lives--;
+        playerDead = true;
         if (lives <= 0)
         {
             GameOver();
         }
         else
         {
-        Invoke("Respawn", respawnTime);
+            player.gameObject.layer = LayerMask.NameToLayer("IgnoreCollisions");
+            Invoke("Respawn", respawnTime);
         }
     }
 
     private void Respawn()
     {
+        SpriteRenderer spriteRenderer = player.GetComponent<SpriteRenderer>();
+        spriteRenderer.sortingOrder = 10;
         player.transform.position = Vector2.zero;
-        player.SetActive(true);
-        player.gameObject.layer = LayerMask.NameToLayer("IgnoreCollisions");
         Invoke("TurnOnCollisions", invulTime);
+        playerDead = false;
     }
 
     private void TurnOnCollisions()

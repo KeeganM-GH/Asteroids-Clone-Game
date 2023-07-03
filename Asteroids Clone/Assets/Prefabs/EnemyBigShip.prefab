@@ -180,3 +180,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.5
   scoreValue: 100
+  spawnInterval: 4
+  miniEnemySpawnCount: 0

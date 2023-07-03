@@ -5,11 +5,13 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public GameManager gameManager;
+    public SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -17,7 +19,14 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             //ded
-            gameObject.SetActive(false);
+            spriteRenderer.sortingOrder = -1;
+            gameManager.PlayerDied();
+        }
+
+        if (collision.gameObject.CompareTag("EnemyBullet"))
+        {
+            //also ded
+            spriteRenderer.sortingOrder = -1;
             gameManager.PlayerDied();
         }
     }
