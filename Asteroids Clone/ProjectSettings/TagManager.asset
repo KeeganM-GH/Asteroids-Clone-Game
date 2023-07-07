@@ -9,6 +9,8 @@ TagManager:
   - BigEnemy
   - Bullet
   - EnemyBullet
+  - FxTemporaire
+  - Asteroid
   layers:
   - Default
   - TransparentFX
@@ -22,7 +24,7 @@ TagManager:
   - PlayerDamage
   - EnemyDamage
   - IgnoreCollisions
-  - 
+  - Asteroids
   - 
   - 
   - 
